@@ -1,10 +1,11 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import './App.scss';
+import { Header } from "./components/shared/header/Header";
 
 function App() {
   return (
-    <div className="">
-      
+    <div className="container">
+      <Header />
     </div>
   );
 }
