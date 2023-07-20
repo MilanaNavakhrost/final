@@ -1,15 +1,24 @@
 header {
    display: flex;
    justify-content: space-between;
+   align-items: center;
    height: 7vh;
+   border-bottom: 1px solid black;
+   margin-bottom: 3vh;
+   padding: 10px 0;
+   width: 100%;
 
-   // .header__logo {
+   .header__logo {
+      text-transform: uppercase;
+      text-decoration: solid;
+   }
 
-   // }
-
-   // .header__input {
-
-   // }
+   .header__input {
+      width: 45%;
+      min-height: 20px;
+      max-height: 50px;
+      height: 100%;
+   }
 
    // .header__btns {
 

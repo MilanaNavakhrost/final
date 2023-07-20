@@ -3,9 +3,9 @@ import './header.scss';
 export const Header = () => {
    return (
       <header>
-         <div className="header__logo">
+         <h2 className="header__logo">
             BookStore
-         </div>
+         </h2>
          <input type="text" className="header__input" />
          <div className="header__btns">
             <button>postponed</button>

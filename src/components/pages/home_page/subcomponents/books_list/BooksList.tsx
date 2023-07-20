@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+// import "./bookList.scss";
 
 interface IBook {
   title: string;
@@ -14,9 +15,9 @@ export const BooksList = () => {
 
   useEffect(() => {
     (async () => {
-      const response: IBook[] = (await(
-        await fetch("https://api.itbook.store/1.0/new")
-      ).json()).books;
+      const response: IBook[] = (
+        await (await fetch("https://api.itbook.store/1.0/new")).json()
+      ).books;
       setBooks(response);
     })();
   }, []);
@@ -27,7 +28,10 @@ export const BooksList = () => {
       <ul>
         {books.map((item) => (
           <li key={item.isbn13}>
-            <h3>{item.title}</h3>
+            <img src={item.image} alt="img" />
+            <h2>{item.title}</h2>
+            <p>{item.subtitle}</p>
+            <h3>{item.price}</h3>
           </li>
         ))}
       </ul>
