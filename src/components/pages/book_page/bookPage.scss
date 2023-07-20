@@ -1,0 +1,23 @@
+.img-desc {
+   display: flex;
+   // align-items: center;
+}
+
+.info {
+border-top: 1px solid black;
+width: 50%;
+}
+
+.price-rating {
+   display: flex;
+
+}
+
+.stars {
+  display: flex;
+}
+
+.star-icon {
+  width: 20px;
+  height: 20px;
+}
