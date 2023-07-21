@@ -1,13 +1,13 @@
-h1 {
+.list-name {
    text-transform: uppercase;
    margin-bottom: 20px;
 }
 
-ul {
+.books-list {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
    list-style: none;
-   row-gap: 20px;
+   row-gap: 40px;
 }
 

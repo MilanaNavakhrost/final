@@ -1,0 +1,27 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 6vh;
+  height: 10vh;
+  width: 100%;
+}
+
+.header__logo {
+  text-transform: uppercase;
+  text-decoration: solid;
+  cursor: pointer;
+}
+
+.header__input {
+  width: 45%;
+  min-height: 20px;
+  max-height: 50px;
+  height: 60%;
+  padding: 0 10px;
+}
+
+/* // .header__btns {
+
+// } */

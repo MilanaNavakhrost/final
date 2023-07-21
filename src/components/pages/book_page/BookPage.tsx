@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { IBook } from "~/utils/types";
 import { useParams } from "react-router-dom";
-import { StarSvg } from "../../shared/StarSvg";
-import "./bookPage.scss";
+import { StarSvg } from "../../shared/icons/StarSvg";
+import "./bookPage.css";
 
 export const BookPage = () => {
   const { id } = useParams();
@@ -21,11 +21,12 @@ export const BookPage = () => {
   return (
     <>
       <button className="arrow">arrow</button>
-      <h1>{bookInfo?.title}</h1>
+      <h1 className="book-title">{bookInfo?.title}</h1>
       <div className="img-desc">
         <div className="book-img">
           <img src={bookInfo?.image} alt="" />
         </div>
+
         <div className="info">
           <div className="price-rating">
             <h2>{bookInfo?.price}</h2>
@@ -38,18 +39,21 @@ export const BookPage = () => {
               ))}
             </div>
           </div>
-          <div>
+
+          <div className="authors">
             <p>Authors</p>
             <p>{bookInfo?.authors}</p>
           </div>
-          <div>
+          <div className="publisher">
             <p>Publisher</p>
             <p>{bookInfo?.publisher}</p>
           </div>
-          <div>
-            <p></p>
-            <p></p>
+          <div className="language">
+            <p>Language</p>
+            <p>English</p>
           </div>
+
+          <button className="add-to-cart">Add to cart</button>
         </div>
       </div>
 
