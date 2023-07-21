@@ -40,16 +40,16 @@ export const BookPage = () => {
             </div>
           </div>
 
-          <div className="authors">
-            <p>Authors</p>
+          <div className="authors-group">
+            <p className="authors">Authors</p>
             <p>{bookInfo?.authors}</p>
           </div>
-          <div className="publisher">
-            <p>Publisher</p>
+          <div className="publisher-group">
+            <p className="publisher">Publisher</p>
             <p>{bookInfo?.publisher}</p>
           </div>
-          <div className="language">
-            <p>Language</p>
+          <div className="language-group">
+            <p className="language">Language</p>
             <p>English</p>
           </div>
 

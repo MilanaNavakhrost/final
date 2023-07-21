@@ -4,10 +4,9 @@
 }
 
 .books-list {
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
    list-style: none;
-   row-gap: 40px;
+   gap: 3em;
 }
 

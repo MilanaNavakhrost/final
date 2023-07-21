@@ -43,22 +43,34 @@
   height: 20px;
 }
 
+.authors-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
 .authors {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.publisher-group {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
 .publisher {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
-.language {
+.language-group {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+}
+
+.language {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .add-to-cart {
