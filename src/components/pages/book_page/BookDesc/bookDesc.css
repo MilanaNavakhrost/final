@@ -11,6 +11,6 @@
   padding: 20px 30px;
 }
 
-.active {
-  border-bottom: 1px solid black; /* как переключать?? */
+.li-active {
+  border-bottom: 2px solid black; /* как переключать?? */
 }

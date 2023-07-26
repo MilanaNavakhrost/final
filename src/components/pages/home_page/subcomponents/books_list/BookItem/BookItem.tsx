@@ -14,18 +14,7 @@ export const BookItem = ({ item }: { item: IBook }) => {
       </div>
       <h3 className="book-name">{item.title}</h3>
       <p className="book-subtitle">{item.subtitle || "-"}</p>
-      <div className="price-stars">
-        <h3>{item.price}</h3>
-        <div className="stars">
-          {new Array(5).fill("").map((_, idx) => (
-            <AiFillStar
-              className="star-icon"
-              key={idx}
-              color={idx < +(item.rating || 0) ? "black" : "lightgray"} //не работает ??  нужен запрос
-            />
-          ))}
-        </div>
-      </div>
+      <h3 className="book-price">{item.price}</h3>
     </li>
   );
 };

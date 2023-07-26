@@ -5,11 +5,6 @@ li {
   justify-content: space-between;
 }
 
-.price-stars {
-  display: flex;
-  justify-content: space-between;
-}
-
 .home-book-img {
   margin-bottom: 10px;
   background-color: rgba(108, 174, 255, 0.3);
