@@ -12,4 +12,5 @@ export interface IBook {
   year: string;
   rating: string;
   desc: string;
+  language: string;
 }

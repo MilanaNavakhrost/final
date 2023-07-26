@@ -1,0 +1,37 @@
+.subscribe-section {
+  background-color: rgba(223, 126, 255, 0.25);
+  padding: 40px 50px;
+  margin-top: 7vh;
+}
+
+.subscribe-title {
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.subscribe-text {
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 25px;
+}
+
+.subscribe-inp-btn {
+  display: flex;
+  height: 46px;
+  width: 100%;
+}
+
+.subscribe-input {
+  height: 100%;
+  width: 80%;
+  border: none;
+  padding: 10px;
+}
+
+.subscribe-btn {
+  height: 100%;
+  width: 20%;
+  border: none;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+}

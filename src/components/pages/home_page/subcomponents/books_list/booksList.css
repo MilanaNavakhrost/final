@@ -1,12 +1,11 @@
 .list-name {
-   text-transform: uppercase;
-   margin-bottom: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .books-list {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   list-style: none;
-   gap: 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+  gap: 3em;
 }
-

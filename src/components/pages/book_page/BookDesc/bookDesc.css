@@ -1,0 +1,16 @@
+.desc-section {
+   margin-bottom: 4vh;
+}
+
+.info-points {
+  display: flex;
+  margin-bottom: 3vh;
+}
+
+.info-points li {
+  padding: 20px 30px;
+}
+
+.active {
+  border-bottom: 1px solid black; /* как переключать?? */
+}

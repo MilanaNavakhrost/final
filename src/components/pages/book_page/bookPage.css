@@ -1,5 +1,8 @@
-.arrow {
-  margin-bottom: 3vh;
+.arrow-icon {
+  height: auto;
+  width: 38px;
+  margin-bottom: 1vh;
+  cursor: pointer;
 }
 
 .book-title {
@@ -10,12 +13,12 @@
 .img-desc {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 5vh;
 }
 
 .book-img {
   width: 40%;
-  border: 3px solid black;
+  background-color: rgba(255, 190, 158, 0.4);
 }
 
 .book-img img {
@@ -80,4 +83,19 @@
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.social-btns-icons {
+  display: flex;
+}
+
+.social-icons {
+  width: 22px;
+  height: auto;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.dots-icon {
+  margin-right: 0;
 }

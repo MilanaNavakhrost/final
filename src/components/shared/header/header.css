@@ -3,25 +3,45 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid black;
-  margin-bottom: 6vh;
+  margin-bottom: 7vh;
   height: 10vh;
   width: 100%;
 }
 
-.header__logo {
+.header-logo {
   text-transform: uppercase;
   text-decoration: solid;
   cursor: pointer;
 }
 
-.header__input {
+.input-box {
   width: 45%;
+  height: 60%;
   min-height: 20px;
   max-height: 50px;
-  height: 60%;
+  position: relative;
+}
+
+.header-input {
+  width: 100%;
+  height: 100%;
   padding: 0 10px;
 }
 
-/* // .header__btns {
+.search-icon {
+  position: absolute;
+  top: 25%;
+  right: 3%;
+}
 
-// } */
+.header-btns-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 12%;
+}
+
+.header-icons {
+  width: 23px;
+  height: auto;
+  cursor: pointer;
+}

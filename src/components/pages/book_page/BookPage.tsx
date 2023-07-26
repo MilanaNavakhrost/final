@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import { IBook } from "~/utils/types";
-import { useParams } from "react-router-dom";
-import { StarSvg } from "../../shared/icons/StarSvg";
+import { useNavigate, useParams } from "react-router-dom";
 import "./bookPage.css";
+import { BookDesc } from "./BookDesc/BookDesc";
+import { FiFacebook, FiTwitter } from "react-icons/fi";
+import { BsThreeDots } from "react-icons/bs";
+import { HiArrowLongLeft } from "react-icons/hi2";
+import { AiFillStar } from "react-icons/ai";
 
 export const BookPage = () => {
+  const navigate = useNavigate();
+
   const { id } = useParams();
 
   const [bookInfo, setBookInfo] = useState<IBook>();
@@ -20,7 +26,7 @@ export const BookPage = () => {
 
   return (
     <>
-      <button className="arrow">arrow</button>
+      <HiArrowLongLeft className="arrow-icon" onClick={() => navigate("/")} />
       <h1 className="book-title">{bookInfo?.title}</h1>
       <div className="img-desc">
         <div className="book-img">
@@ -32,7 +38,8 @@ export const BookPage = () => {
             <h2>{bookInfo?.price}</h2>
             <div className="stars">
               {new Array(5).fill("").map((_, idx) => (
-                <StarSvg
+                <AiFillStar
+                  className="star-icon"
                   key={idx}
                   color={idx < +(bookInfo?.rating || 0) ? "black" : "lightgray"}
                 />
@@ -50,15 +57,19 @@ export const BookPage = () => {
           </div>
           <div className="language-group">
             <p className="language">Language</p>
-            <p>English</p>
+            <p>{bookInfo?.language}</p>
           </div>
 
           <button className="add-to-cart">Add to cart</button>
         </div>
       </div>
 
-               
-
+      <BookDesc book={bookInfo} />
+      <div className="social-btns-icons">
+        <FiFacebook className="social-icons facebook-icon" />
+        <FiTwitter className="social-icons twitter-icon" />
+        <BsThreeDots className="social-icons dots-icon" />
+      </div>
     </>
   );
 };
