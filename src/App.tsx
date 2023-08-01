@@ -15,7 +15,6 @@ function App() {
         <Route path="/book/:id" element={<BookPage />} />
         <Route path="/cart" element={<CartPage />} />
       </Routes>
-      <SubscribeSection />
       <Footer />
     </div>
   );

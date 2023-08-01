@@ -1,5 +1,9 @@
+import { CartList } from "./cartList/CartList";
+
 export const CartPage = () => {
-   return (
-      <></>
-   )
-}
+  return (
+    <>
+      <CartList />
+    </>
+  );
+};

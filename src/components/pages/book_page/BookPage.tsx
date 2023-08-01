@@ -7,9 +7,15 @@ import { FiFacebook, FiTwitter } from "react-icons/fi";
 import { BsThreeDots } from "react-icons/bs";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { AiFillStar } from "react-icons/ai";
+import { SubscribeSection } from "../../../components/shared/subscribeSection/SubscribeSection";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { addToCart } from "../../../store/reducers/cartReducer";
 
 export const BookPage = () => {
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const { id } = useParams();
 
@@ -23,6 +29,12 @@ export const BookPage = () => {
       setBookInfo(response);
     })();
   }, [id]);
+
+  const handleButton = () => {
+    if (bookInfo) {
+      dispatch(addToCart(bookInfo));
+    }
+  };
 
   return (
     <>
@@ -60,7 +72,9 @@ export const BookPage = () => {
             <p>{bookInfo?.language}</p>
           </div>
 
-          <button className="add-to-cart">Add to cart</button>
+          <button className="add-to-cart" onClick={handleButton}>
+            Add to cart
+          </button>
         </div>
       </div>
 
@@ -70,6 +84,8 @@ export const BookPage = () => {
         <FiTwitter className="social-icons twitter-icon" />
         <BsThreeDots className="social-icons dots-icon" />
       </div>
+
+      <SubscribeSection />
     </>
   );
 };

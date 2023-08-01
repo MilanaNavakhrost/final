@@ -83,6 +83,11 @@
   color: white;
   border: none;
   cursor: pointer;
+  transition: 300ms;
+}
+
+.add-to-cart:active {
+  background-color: rgb(150, 150, 150);
 }
 
 .social-btns-icons {

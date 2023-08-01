@@ -1,0 +1,56 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-img {
+  width: 20%;
+  background-color: rgba(223, 126, 255, 0.3);
+}
+
+.cart-img img {
+  width: 100%;
+  height: auto;
+}
+
+.cart-text {
+  width: 70%;
+}
+
+.cart-item-title {
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.cart-item-author {
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.cart-item-price {
+  margin-bottom: 30px;
+}
+
+.cart-btns-group {
+  display: flex;
+}
+
+.cart-btns {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.cart-minus {
+}
+
+.cart-count {
+   margin: 0 10px;
+   font-size: 18px;
+}
+
+.cart-plus {
+}

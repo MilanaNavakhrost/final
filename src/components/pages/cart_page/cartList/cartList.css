@@ -1,0 +1,13 @@
+.cart-list li {
+  border-bottom: 1px solid black;
+  padding: 35px 0;
+}
+
+.cart-list li:first-child {
+  padding-top: 0px;
+}
+
+.cart-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0px;
+}
