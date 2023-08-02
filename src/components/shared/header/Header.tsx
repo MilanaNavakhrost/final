@@ -6,25 +6,33 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
+import { useSelector } from "react-redux";
+import classNames from 'classnames';
 
 export const Header = () => {
+
   const navigate = useNavigate();
+
+  const cartItems = useSelector((state: any) => state.cartReducer.cartItems); 
 
   return (
     <header>
       <h2 className="header-logo" onClick={() => navigate("/")}>
         BookStore
       </h2>
-      <div className="input-box">
+      <div className="header-input-box">
         <input type="text" className="header-input" placeholder="Search" />
         <BiSearch className="header-icons search-icon" />
       </div>
       <div className="header-btns-icons">
         <AiOutlineHeart className="header-icons heart-icon" />
+        <div className="header-cart-group">
         <AiOutlineShoppingCart
           className="header-icons cart-icon"
           onClick={() => navigate("/cart")}
         />
+        <div className={classNames(cartItems.length > 0 && 'circle-cart-items')}>{cartItems.length > 0 ? cartItems.length : '' }</div>
+        </div>
         <AiOutlineUser className="header-icons user-icon" />
       </div>
     </header>

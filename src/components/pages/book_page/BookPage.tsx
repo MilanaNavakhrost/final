@@ -9,8 +9,9 @@ import { HiArrowLongLeft } from "react-icons/hi2";
 import { AiFillStar } from "react-icons/ai";
 import { SubscribeSection } from "../../../components/shared/subscribeSection/SubscribeSection";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+// import { useSelector } from "react-redux/es/hooks/useSelector";
 import { addToCart } from "../../../store/reducers/cartReducer";
+import classNames from "classnames";
 
 export const BookPage = () => {
   const navigate = useNavigate();
@@ -18,6 +19,9 @@ export const BookPage = () => {
   const dispatch = useDispatch();
 
   const { id } = useParams();
+
+  const [addBtn, setAddBtn] = useState({ isClicked: false });
+  const [textBtn, setTextBtn] = useState("Add to cart");
 
   const [bookInfo, setBookInfo] = useState<IBook>();
 
@@ -34,6 +38,8 @@ export const BookPage = () => {
     if (bookInfo) {
       dispatch(addToCart(bookInfo));
     }
+    setAddBtn({ isClicked: true });
+    setTextBtn("Added to cart");
   };
 
   return (
@@ -72,8 +78,14 @@ export const BookPage = () => {
             <p>{bookInfo?.language}</p>
           </div>
 
-          <button className="add-to-cart" onClick={handleButton}>
-            Add to cart
+          <button
+            className={classNames(
+              addBtn.isClicked === true ? "add-to-cart-clicked" : "add-to-cart"
+            )}
+            onClick={handleButton}
+            disabled={addBtn.isClicked}
+          >
+            {textBtn}
           </button>
         </div>
       </div>

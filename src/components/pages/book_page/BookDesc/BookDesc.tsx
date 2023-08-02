@@ -14,10 +14,6 @@ export const BookDesc = ({ book }: { book?: IBook }) => {
   const [text, setText] = useState("");
   const [active, setActive] = useState<ETabsLi>(ETabsLi.DESCRIPTIONS);
 
-  let styleLi = {
-    borderBottom: "",
-  };
-
   const handleDesk = () => {
     setText(`${book?.desc}`);
     setActive(ETabsLi.DESCRIPTIONS);
