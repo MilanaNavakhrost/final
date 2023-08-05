@@ -9,11 +9,13 @@ export const CartList = () => {
   return (
     <>
       <ul className="cart-list">
-        {cartItems.map((item: IBook) => (
-          <li>
-            <CartItem item={item} />
-          </li>
-        ))}
+        {cartItems.length
+          ? cartItems.map((item: IBook, idx: number) => (
+              <li key={idx}>
+                <CartItem item={item} />
+              </li>
+            ))
+          : 'No items in cart'}
       </ul>
     </>
   );

@@ -9,8 +9,7 @@ import { HiArrowLongLeft } from "react-icons/hi2";
 import { AiFillStar } from "react-icons/ai";
 import { SubscribeSection } from "../../../components/shared/subscribeSection/SubscribeSection";
 import { useDispatch } from "react-redux";
-// import { useSelector } from "react-redux/es/hooks/useSelector";
-import { addToCart } from "../../../store/reducers/cartReducer";
+import { addToCart, saveToLocalStorage } from "../../../store/reducers/cartReducer";
 import classNames from "classnames";
 
 export const BookPage = () => {
@@ -37,6 +36,7 @@ export const BookPage = () => {
   const handleButton = () => {
     if (bookInfo) {
       dispatch(addToCart(bookInfo));
+      dispatch(saveToLocalStorage());
     }
     setAddBtn({ isClicked: true });
     setTextBtn("Added to cart");

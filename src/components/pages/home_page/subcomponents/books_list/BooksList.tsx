@@ -19,8 +19,8 @@ export const BooksList = () => {
     <>
       <h1 className="list-name">New releases books</h1>
       <ul className="books-list">
-        {books.map((item) => (
-          <BookItem item={item} />
+        {books.map((item, idx) => (
+          <BookItem item={item} key={idx} />
         ))}
       </ul>
     </>

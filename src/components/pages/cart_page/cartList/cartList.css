@@ -1,6 +1,7 @@
 .cart-list li {
   border-bottom: 1px solid black;
   padding: 35px 0;
+  cursor: auto;
 }
 
 .cart-list li:first-child {

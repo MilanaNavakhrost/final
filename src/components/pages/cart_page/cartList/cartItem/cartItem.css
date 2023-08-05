@@ -6,6 +6,7 @@
 .cart-img {
   width: 20%;
   background-color: rgba(223, 126, 255, 0.3);
+  cursor: pointer;
 }
 
 .cart-img img {
@@ -15,20 +16,21 @@
 
 .cart-text {
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cart-item-title {
   text-transform: uppercase;
-  margin-bottom: 18px;
+  cursor: pointer;
 }
 
 .cart-item-author {
   text-transform: uppercase;
-  margin-bottom: 28px;
 }
 
 .cart-item-price {
-  margin-bottom: 30px;
 }
 
 .cart-btns-group {
@@ -48,9 +50,20 @@
 }
 
 .cart-count {
-   margin: 0 10px;
-   font-size: 18px;
+  margin: 0 10px;
+  font-size: 18px;
 }
 
 .cart-plus {
+}
+
+.cart-remove-item {
+  width: 30%;
+  height: 5vh;
+  border: none;
+  cursor: pointer;
+  transition: 300ms;
+  text-transform: uppercase;
+  background-color: rgba(108, 174, 255, 0.3);
+  color: black;
 }

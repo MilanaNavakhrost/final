@@ -2,7 +2,7 @@ export interface IBook {
   title: string;
   subtitle: string;
   isbn13: number;
-  price: number;
+  price: string;
   image: string;
   url: string;
   authors: string;
