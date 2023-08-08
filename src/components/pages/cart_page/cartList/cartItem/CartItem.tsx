@@ -42,13 +42,13 @@ export const CartItem = ({ item }: { item: IBook }) => {
         </h2>
         <p className="cart-item-author">{item.authors}</p>
         <h2 className="cart-item-price">
-          ${+item.price.substring(1, item.price.length) * item.cartAmount}
+          ${+item.price.substring(1, item.price.length) * (item.cartAmount || 1)}
         </h2>
         <div className="cart-btns-group">
           <button
             className="cart-minus cart-btns"
             onClick={() => {
-              dispatch(minusItemAmount(item.cartAmount));
+              dispatch(minusItemAmount(item.isbn13));
             }}
           >
             -
@@ -57,7 +57,7 @@ export const CartItem = ({ item }: { item: IBook }) => {
           <button
             className="cart-plus cart-btns"
             onClick={() => {
-              dispatch(plusItemAmount(item.cartAmount));
+              dispatch(plusItemAmount(item.isbn13));
             }}
           >
             +

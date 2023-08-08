@@ -115,7 +115,7 @@
   background-color: rgb(150, 150, 150);
 }
 
-.add-to-cart-clicked {
+.add-to-cart:disabled {
   background-color: rgba(165, 42, 42, 0.8);
   cursor: auto;
   width: 100%;

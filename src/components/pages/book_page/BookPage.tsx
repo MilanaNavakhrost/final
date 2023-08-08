@@ -8,7 +8,7 @@ import { BsThreeDots } from "react-icons/bs";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import { SubscribeSection } from "../../../components/shared/subscribeSection/SubscribeSection";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
   saveToLocalStorage,
@@ -22,9 +22,7 @@ export const BookPage = () => {
 
   const { id } = useParams();
 
-    const [addBtn, setAddBtn] = useState( {isClicked: false} );
-
-  const [textBtn, setTextBtn] = useState("Add to cart");
+  const cartItems = useSelector((state: any) => state.cartReducer.cartItems);
 
   const [heart, setHeart] = useState({ isRed: false });
 
@@ -35,7 +33,10 @@ export const BookPage = () => {
       const response: IBook = await (
         await fetch(`https://api.itbook.store/1.0/books/${id}`)
       ).json();
-      setBookInfo(response);
+      setBookInfo(() => {
+        response.cartAmount = 1;
+        return response;
+      });
     })();
   }, [id]);
 
@@ -44,8 +45,6 @@ export const BookPage = () => {
       dispatch(addToCart(bookInfo));
       dispatch(saveToLocalStorage());
     }
-    setAddBtn({ isClicked: true });
-    setTextBtn("Added to cart");
   };
 
   return (
@@ -62,7 +61,7 @@ export const BookPage = () => {
                   ? "book-page-heart heart-active"
                   : "book-page-heart"
               )}
-              onClick={() => setHeart({ isRed:  true})}
+              onClick={() => setHeart({ isRed: true })}
             />
           </div>
         </div>
@@ -95,13 +94,15 @@ export const BookPage = () => {
           </div>
 
           <button
-            className={classNames(
-              addBtn.isClicked === true ? "add-to-cart-clicked" : "add-to-cart"
-            )}
+            className="add-to-cart"
             onClick={handleButton}
-            disabled={addBtn.isClicked}
+            disabled={cartItems.find(
+              (el: IBook) => el.isbn13 === bookInfo?.isbn13
+            )}
           >
-            {textBtn}
+            {cartItems.find((el: IBook) => el.isbn13 === bookInfo?.isbn13)
+              ? "Added to cart"
+              : "Add to cart"}
           </button>
         </div>
       </div>

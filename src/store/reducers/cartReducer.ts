@@ -17,6 +17,10 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action: PayloadAction<IBook>) => {
       state.cartItems.push(action.payload);
+      const itemId = state.cartItems.findIndex(
+        (el: IBook) => el.isbn13 === action.payload.isbn13
+      );
+      state.cartItems[itemId].cartAmount = 1;
     },
 
     removeItem: (state, action: PayloadAction<number>) => {
@@ -35,15 +39,21 @@ export const cartSlice = createSlice({
     },
 
     plusItemAmount: (state, action: PayloadAction<number>) => {
-      // state.cartItemAmount === action.payload;
-      action.payload += 1;
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      const itemId = state.cartItems.findIndex(
+        (el: IBook) => el.isbn13 === action.payload
+      );
+      state.cartItems[itemId].cartAmount
+        ? (state.cartItems[itemId].cartAmount += 1)
+        : (state.cartItems[itemId].cartAmount = 1);
     },
 
     minusItemAmount: (state, action: PayloadAction<number>) => {
-      // state.cartItemAmount === action.payload;
-      action.payload += 1;
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      const itemId = state.cartItems.findIndex(
+        (el: IBook) => el.isbn13 === action.payload
+      );
+      state.cartItems[itemId].cartAmount
+        ? (state.cartItems[itemId].cartAmount -= 1)
+        : (state.cartItems[itemId].cartAmount = 1);
     },
   },
 });

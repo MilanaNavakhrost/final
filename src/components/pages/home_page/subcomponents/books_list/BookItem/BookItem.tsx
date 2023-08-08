@@ -1,16 +1,10 @@
-import { useState } from "react";
 import { IBook } from "~/utils/types";
 import "./bookItem.css";
 import { useNavigate } from "react-router-dom";
-import { AiOutlineHeart } from "react-icons/ai";
-import { useDispatch } from "react-redux";
-import { addToLiked } from "../../../../../../store/reducers/likedReducer";
+import { LikedButton } from "../../../../../../components/shared/LikedButton";
 
 export const BookItem = ({ item }: { item: IBook }) => {
   const navigate = useNavigate();
-
-  const dispatch = useDispatch();
-
   return (
     <li key={item.isbn13}>
       <div
@@ -23,10 +17,7 @@ export const BookItem = ({ item }: { item: IBook }) => {
       <p className="book-subtitle">{item.subtitle || "-"}</p>
       <div className="book-price-like">
         <h3 className="book-price">{item.price}</h3>
-        <AiOutlineHeart
-          className="book-like-icon heart-icon"
-          onClick={() => dispatch(addToLiked(item))}
-        />
+        <LikedButton item={item} />
       </div>
     </li>
   );

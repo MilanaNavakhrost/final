@@ -4,7 +4,6 @@ import { HomePage } from "./components/pages/home_page/HomePage";
 import { Footer } from "./components/shared/footer/Footer";
 import { Header } from "./components/shared/header/Header";
 import { Routes, Route } from "react-router-dom";
-import { SubscribeSection } from "./components/shared/subscribeSection/SubscribeSection";
 import { LikedPage } from "./components/pages/liked_page/LikedPage";
 
 function App() {

@@ -10,20 +10,27 @@ import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 import { useEffect } from "react";
 import { setCartItems } from "../../../store/reducers/cartReducer";
+import { setLikedItems } from "../../../store/reducers/likedReducer";
 
 export const Header = () => {
   const navigate = useNavigate();
 
   const cartItems = useSelector((state: any) => state.cartReducer.cartItems);
-  
+
   const likedItems = useSelector((state: any) => state.likedReducer.likedItems);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const localStorageData = localStorage.getItem("cartItems");
-    if (localStorageData) {
-      dispatch(setCartItems(JSON.parse(localStorageData) || []));
+    const localStorageCartData = localStorage.getItem("cartItems");
+    const localStorageLikedData = localStorage.getItem("likedItems");
+
+    if (localStorageCartData) {
+      dispatch(setCartItems(JSON.parse(localStorageCartData) || []));
+    }
+
+    if (localStorageLikedData) {
+      dispatch(setLikedItems(JSON.parse(localStorageLikedData) || []));
     }
   }, []);
 
@@ -37,14 +44,15 @@ export const Header = () => {
         <BiSearch className="header-icons search-icon" />
       </div>
       <div className="header-btns-icons">
-
         <div className="header-liked-group">
           <AiOutlineHeart
             className="header-icons heart-icon"
             onClick={() => navigate("/liked")}
           />
           <div
-            className={classNames(likedItems.length > 0 && "circle-liked-items")}
+            className={classNames(
+              likedItems.length > 0 && "circle-liked-items"
+            )}
           >
             {likedItems.length > 0 ? likedItems.length : ""}
           </div>

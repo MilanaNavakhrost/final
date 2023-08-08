@@ -11,7 +11,12 @@ export const BooksList = () => {
       const response: IBook[] = (
         await (await fetch("https://api.itbook.store/1.0/new")).json()
       ).books;
-      setBooks(response);
+      setBooks(
+        response.map((el) => {
+          el.cartAmount = 1;
+          return el;
+        })
+      );
     })();
   }, []);
 
