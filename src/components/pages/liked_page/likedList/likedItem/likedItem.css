@@ -1,0 +1,55 @@
+.liked-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.liked-item-img {
+  width: 20%;
+  background-color: rgba(255, 137, 194, 0.3);
+  cursor: pointer;
+}
+
+.liked-item-img img {
+  width: 100%;
+  height: auto;
+}
+
+.liked-item-text {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.liked-item-title {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.liked-item-author {
+  text-transform: uppercase;
+}
+
+.liked-item-price {
+}
+
+.liked-item-btns {
+  display: flex;
+}
+
+.liked-item-cart {
+  min-width: 100px;
+  width: 30%;
+  height: 5vh;
+  border: none;
+  background-color: rgba(220, 114, 255, 0.4);
+  cursor: pointer;
+  transition: 300ms;
+  text-transform: uppercase;
+  margin-right: 5%;
+}
+
+.liked-item-icon {
+   width: 28px;
+   height: auto;
+}

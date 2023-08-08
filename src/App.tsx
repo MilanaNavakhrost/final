@@ -5,6 +5,7 @@ import { Footer } from "./components/shared/footer/Footer";
 import { Header } from "./components/shared/header/Header";
 import { Routes, Route } from "react-router-dom";
 import { SubscribeSection } from "./components/shared/subscribeSection/SubscribeSection";
+import { LikedPage } from "./components/pages/liked_page/LikedPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/book/:id" element={<BookPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/liked" element={<LikedPage />} />
       </Routes>
       <Footer />
     </div>

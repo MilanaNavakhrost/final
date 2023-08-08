@@ -13,4 +13,5 @@ export interface IBook {
   rating: string;
   desc: string;
   language: string;
+  cartAmount: number;
 }

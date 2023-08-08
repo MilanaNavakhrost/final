@@ -15,6 +15,8 @@ export const Header = () => {
   const navigate = useNavigate();
 
   const cartItems = useSelector((state: any) => state.cartReducer.cartItems);
+  
+  const likedItems = useSelector((state: any) => state.likedReducer.likedItems);
 
   const dispatch = useDispatch();
 
@@ -35,7 +37,19 @@ export const Header = () => {
         <BiSearch className="header-icons search-icon" />
       </div>
       <div className="header-btns-icons">
-        <AiOutlineHeart className="header-icons heart-icon" />
+
+        <div className="header-liked-group">
+          <AiOutlineHeart
+            className="header-icons heart-icon"
+            onClick={() => navigate("/liked")}
+          />
+          <div
+            className={classNames(likedItems.length > 0 && "circle-liked-items")}
+          >
+            {likedItems.length > 0 ? likedItems.length : ""}
+          </div>
+        </div>
+
         <div className="header-cart-group">
           <AiOutlineShoppingCart
             className="header-icons cart-icon"
@@ -47,6 +61,7 @@ export const Header = () => {
             {cartItems.length > 0 ? cartItems.length : ""}
           </div>
         </div>
+
         <AiOutlineUser className="header-icons user-icon" />
       </div>
     </header>

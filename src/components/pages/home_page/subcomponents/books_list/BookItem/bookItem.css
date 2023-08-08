@@ -1,5 +1,4 @@
 li {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8,6 +7,7 @@ li {
 .home-book-img {
   margin-bottom: 10px;
   background-color: rgba(108, 174, 255, 0.3);
+  cursor: pointer;
 }
 
 .home-book-img img {
@@ -22,4 +22,15 @@ li {
 
 .book-subtitle {
   margin-bottom: 15px;
+}
+
+.book-price-like {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-like-icon {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
 }

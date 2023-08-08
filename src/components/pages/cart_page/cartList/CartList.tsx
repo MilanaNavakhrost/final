@@ -15,7 +15,7 @@ export const CartList = () => {
                 <CartItem item={item} />
               </li>
             ))
-          : 'No items in cart'}
+          : <h2 className="cart-default-text">No items in cart</h2>}
       </ul>
     </>
   );

@@ -6,10 +6,13 @@ import { BookDesc } from "./BookDesc/BookDesc";
 import { FiFacebook, FiTwitter } from "react-icons/fi";
 import { BsThreeDots } from "react-icons/bs";
 import { HiArrowLongLeft } from "react-icons/hi2";
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import { SubscribeSection } from "../../../components/shared/subscribeSection/SubscribeSection";
 import { useDispatch } from "react-redux";
-import { addToCart, saveToLocalStorage } from "../../../store/reducers/cartReducer";
+import {
+  addToCart,
+  saveToLocalStorage,
+} from "../../../store/reducers/cartReducer";
 import classNames from "classnames";
 
 export const BookPage = () => {
@@ -19,8 +22,11 @@ export const BookPage = () => {
 
   const { id } = useParams();
 
-  const [addBtn, setAddBtn] = useState({ isClicked: false });
+    const [addBtn, setAddBtn] = useState( {isClicked: false} );
+
   const [textBtn, setTextBtn] = useState("Add to cart");
+
+  const [heart, setHeart] = useState({ isRed: false });
 
   const [bookInfo, setBookInfo] = useState<IBook>();
 
@@ -49,6 +55,16 @@ export const BookPage = () => {
       <div className="img-desc">
         <div className="book-img">
           <img src={bookInfo?.image} alt="" />
+          <div className="book-heart-bg">
+            <AiOutlineHeart
+              className={classNames(
+                heart.isRed === true
+                  ? "book-page-heart heart-active"
+                  : "book-page-heart"
+              )}
+              onClick={() => setHeart({ isRed:  true})}
+            />
+          </div>
         </div>
 
         <div className="info">

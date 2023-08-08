@@ -46,6 +46,26 @@ header {
   cursor: pointer;
 }
 
+.header-liked-group {
+  position: relative;
+}
+
+.circle-liked-items {
+  background-color: rgba(255, 64, 64);
+  border-radius: 50%;
+  font-size: 12px;
+  color: white;
+  padding: 0 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -10px;
+  right: -12px;
+}
+
 .header-cart-group {
   position: relative;
 }

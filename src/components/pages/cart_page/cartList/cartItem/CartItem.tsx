@@ -2,7 +2,12 @@ import { IBook } from "~/utils/types";
 import "./cartItem.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { removeItem, saveToLocalStorage } from "../../../../../store/reducers/cartReducer";
+import {
+  minusItemAmount,
+  plusItemAmount,
+  removeItem,
+  saveToLocalStorage,
+} from "../../../../../store/reducers/cartReducer";
 import { useState, useEffect } from "react";
 
 export const CartItem = ({ item }: { item: IBook }) => {
@@ -10,11 +15,15 @@ export const CartItem = ({ item }: { item: IBook }) => {
 
   const dispatch = useDispatch();
 
-  const [amountItem, setAmountItem] = useState(1);
+  // const cartItemAmount = useSelector(
+  //   (state: any) => state.cartReducer.cartItemAmount
+  // );
+
+  // const [amountItem, setAmountItem] = useState(1);
 
   useEffect(() => {
-    amountItem === 0 && dispatch(removeItem(item.isbn13));
-  }, [amountItem]);
+    item.cartAmount === 0 && dispatch(removeItem(item.isbn13));
+  }, [item.cartAmount]);
 
   return (
     <div className="cart-item">
@@ -33,19 +42,23 @@ export const CartItem = ({ item }: { item: IBook }) => {
         </h2>
         <p className="cart-item-author">{item.authors}</p>
         <h2 className="cart-item-price">
-          ${+item.price.substring(1, item.price.length) * amountItem}
+          ${+item.price.substring(1, item.price.length) * item.cartAmount}
         </h2>
         <div className="cart-btns-group">
           <button
             className="cart-minus cart-btns"
-            onClick={() => setAmountItem(amountItem - 1)}
+            onClick={() => {
+              dispatch(minusItemAmount(item.cartAmount));
+            }}
           >
             -
           </button>
-          <p className="cart-count">{amountItem}</p>
+          <p className="cart-count">{item.cartAmount}</p>
           <button
             className="cart-plus cart-btns"
-            onClick={() => setAmountItem(amountItem + 1)}
+            onClick={() => {
+              dispatch(plusItemAmount(item.cartAmount));
+            }}
           >
             +
           </button>
