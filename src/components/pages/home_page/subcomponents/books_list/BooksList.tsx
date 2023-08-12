@@ -3,23 +3,7 @@ import "./booksList.css";
 import { IBook } from "~/utils/types";
 import { BookItem } from "./BookItem/BookItem";
 
-export const BooksList = () => {
-  const [books, setBooks] = useState<IBook[]>([]);
-
-  useEffect(() => {
-    (async () => {
-      const response: IBook[] = (
-        await (await fetch("https://api.itbook.store/1.0/new")).json()
-      ).books;
-      setBooks(
-        response.map((el) => {
-          el.cartAmount = 1;
-          return el;
-        })
-      );
-    })();
-  }, []);
-
+export const BooksList = ({ books }: { books: IBook[] }) => {
   return (
     <>
       <h1 className="list-name">New releases books</h1>

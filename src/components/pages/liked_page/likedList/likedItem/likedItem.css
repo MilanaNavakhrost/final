@@ -26,10 +26,6 @@
   cursor: pointer;
 }
 
-.liked-item-author {
-  text-transform: uppercase;
-}
-
 .liked-item-price {
 }
 
@@ -40,7 +36,7 @@
 .liked-item-cart {
   min-width: 100px;
   width: 30%;
-  height: 5vh;
+  height: 6vh;
   border: none;
   background-color: rgba(220, 114, 255, 0.4);
   cursor: pointer;
@@ -49,7 +45,7 @@
   margin-right: 5%;
 }
 
-.liked-item-icon {
-   width: 28px;
+/* .liked-item-icon {
+   width: 30px;
    height: auto;
-}
+} */

@@ -5,7 +5,6 @@ import {
   AiOutlineShoppingCart,
   AiOutlineUser,
 } from "react-icons/ai";
-import { BiSearch } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 import { useEffect } from "react";
@@ -39,10 +38,6 @@ export const Header = () => {
       <h2 className="header-logo" onClick={() => navigate("/")}>
         BookStore
       </h2>
-      <div className="header-input-box">
-        <input type="text" className="header-input" placeholder="Search" />
-        <BiSearch className="header-icons search-icon" />
-      </div>
       <div className="header-btns-icons">
         <div className="header-liked-group">
           <AiOutlineHeart

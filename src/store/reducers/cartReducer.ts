@@ -3,12 +3,12 @@ import { IBook } from "~/utils/types";
 
 export interface IState {
   cartItems: IBook[];
-  cartItemAmount: number;
+  // cartItemAmount: number;
 }
 
 const initialState: IState = {
   cartItems: [],
-  cartItemAmount: 1,
+  // cartItemAmount: 1,
 };
 
 export const cartSlice = createSlice({
@@ -20,7 +20,9 @@ export const cartSlice = createSlice({
       const itemId = state.cartItems.findIndex(
         (el: IBook) => el.isbn13 === action.payload.isbn13
       );
-      state.cartItems[itemId].cartAmount = 1;
+      const newCartItems = JSON.parse(JSON.stringify(state.cartItems));
+      newCartItems[itemId].cartAmount = 1;
+      state.cartItems = newCartItems;
     },
 
     removeItem: (state, action: PayloadAction<number>) => {

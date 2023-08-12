@@ -27,7 +27,6 @@ export const LikedItem = ({ item }: { item: IBook }) => {
         >
           {item.title}
         </h2>
-        <p className="liked-item-author">{item.authors}</p>
         <h2 className="liked-item-price">{item.price}</h2>
         <div className="liked-item-btns">
           <button

@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { IBook } from "~/utils/types";
 import "./bookDesc.css";
-import classNames from 'classnames';
-
+import classNames from "classnames";
 
 const enum ETabsLi {
-  DESCRIPTIONS = '1',
-  AUTHORS = '2',
-  REVIEWS = '3'
+  DESCRIPTIONS = "1",
+  AUTHORS = "2",
+  REVIEWS = "3",
 }
 
 export const BookDesc = ({ book }: { book?: IBook }) => {
@@ -27,23 +26,31 @@ export const BookDesc = ({ book }: { book?: IBook }) => {
     setActive(ETabsLi.REVIEWS);
   };
 
-
   return (
     <div className="desc-section">
       <ul className="info-points">
-        <li className={classNames({
-          'li-active': active === ETabsLi.DESCRIPTIONS
-        })} onClick={handleDesk}>
+        <li
+          className={classNames({
+            "li-active": active === ETabsLi.DESCRIPTIONS,
+          })}
+          onClick={handleDesk}
+        >
           Description
         </li>
-        <li className={classNames({
-          'li-active': active === ETabsLi.AUTHORS
-        })} onClick={handleAuthors}>
+        <li
+          className={classNames({
+            "li-active": active === ETabsLi.AUTHORS,
+          })}
+          onClick={handleAuthors}
+        >
           Authors
         </li>
-        <li className={classNames({
-          'li-active': active === ETabsLi.REVIEWS
-        })} onClick={handleReviews}>
+        <li
+          className={classNames({
+            "li-active": active === ETabsLi.REVIEWS,
+          })}
+          onClick={handleReviews}
+        >
           Reviews
         </li>
       </ul>
