@@ -27,25 +27,6 @@
   height: auto;
 }
 
-.book-heart-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 10%;
-  height: 10%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.book-page-heart {
-  width: 25px;
-  height: auto;
-  color: white;
-}
-
 .heart-active {
   background-color: red;
 }
@@ -70,34 +51,22 @@
   height: 20px;
 }
 
-.authors-group {
+.names-attributes-group {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.authors {
+.names {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.publisher-group {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
+.attributes {
+  text-align: right;
 }
 
-.publisher {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.language-group {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 50px;
-}
-
-.language {
-  color: rgba(0, 0, 0, 0.5);
+.year {
+  margin-bottom: 25px;
 }
 
 .add-to-cart {

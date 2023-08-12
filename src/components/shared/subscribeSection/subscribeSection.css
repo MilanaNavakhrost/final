@@ -25,6 +25,7 @@
   width: 80%;
   border: none;
   padding: 10px;
+  outline: none;
 }
 
 .subscribe-btn {
@@ -34,4 +35,5 @@
   background: black;
   color: white;
   text-transform: uppercase;
+  cursor: pointer;
 }

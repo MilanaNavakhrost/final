@@ -9,6 +9,7 @@
 
 .info-points li {
   padding: 20px 30px;
+  cursor: pointer;
 }
 
 .li-active {

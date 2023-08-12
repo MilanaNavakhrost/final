@@ -54,16 +54,6 @@ export const BookPage = () => {
       <div className="img-desc">
         <div className="book-img">
           <img src={bookInfo?.image} alt="" />
-          <div className="book-heart-bg">
-            <AiOutlineHeart
-              className={classNames(
-                heart.isRed === true
-                  ? "book-page-heart heart-active"
-                  : "book-page-heart"
-              )}
-              onClick={() => setHeart({ isRed: true })}
-            />
-          </div>
         </div>
 
         <div className="info">
@@ -80,17 +70,25 @@ export const BookPage = () => {
             </div>
           </div>
 
-          <div className="authors-group">
-            <p className="authors">Authors</p>
-            <p>{bookInfo?.authors}</p>
+          <div className="authors-group names-attributes-group">
+            <p className="authors names">Authors</p>
+            <p className="attributes">{bookInfo?.authors}</p>
           </div>
-          <div className="publisher-group">
-            <p className="publisher">Publisher</p>
-            <p>{bookInfo?.publisher}</p>
+          <div className="publisher-group names-attributes-group">
+            <p className="publisher names">Publisher</p>
+            <p className="attributes">{bookInfo?.publisher}</p>
           </div>
-          <div className="language-group">
-            <p className="language">Language</p>
-            <p>{bookInfo?.language}</p>
+          <div className="language-group names-attributes-group">
+            <p className="language names">Language</p>
+            <p className="attributes">{bookInfo?.language}</p>
+          </div>
+          <div className="pages-group names-attributes-group">
+            <p className="pages names">Pages</p>
+            <p className="attributes">{bookInfo?.pages}</p>
+          </div>
+          <div className="year-group names-attributes-group">
+            <p className="year names">Year</p>
+            <p className="attributes">{bookInfo?.year}</p>
           </div>
 
           <button
