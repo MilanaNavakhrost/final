@@ -35,7 +35,7 @@ export const Header = () => {
 
   return (
     <header>
-      <h2 className="header-logo" onClick={() => navigate("/")}>
+      <h2 className="header-logo" onClick={() => navigate("/home")}>
         BookStore
       </h2>
       <div className="header-btns-icons">
@@ -65,7 +65,10 @@ export const Header = () => {
           </div>
         </div>
 
-        <AiOutlineUser className="header-icons user-icon" />
+        <AiOutlineUser
+          className="header-icons user-icon"
+          onClick={() => navigate("/")}
+        />
       </div>
     </header>
   );

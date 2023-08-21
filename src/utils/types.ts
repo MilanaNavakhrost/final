@@ -15,3 +15,10 @@ export interface IBook {
   language: string;
   cartAmount: number;
 }
+
+export interface IUser {
+  id: number;
+  email: string;
+  password: string;
+  name: string;
+}

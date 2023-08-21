@@ -49,7 +49,7 @@ export const BookPage = () => {
 
   return (
     <>
-      <HiArrowLongLeft className="arrow-icon" onClick={() => navigate("/")} />
+      <HiArrowLongLeft className="arrow-icon" onClick={() => navigate("/home")} />
       <h1 className="book-title">{bookInfo?.title}</h1>
       <div className="img-desc">
         <div className="book-img">
